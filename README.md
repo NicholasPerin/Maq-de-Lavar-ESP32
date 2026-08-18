@@ -4,6 +4,7 @@
 Projeto da disciplina de Microcontroladores (Engenharia de Computação — Centro Universitário Fundação Santo André), avaliação P2 2026, baseada na Taxonomia de Bloom.
 
 **Integrantes:** Gabriel Ávila de Oliveira, Nicholas Vincent Perin, Vitor Borges Souza
+
 **Orientador:** Prof. Edson Antônio De Abreu
 
 ---
