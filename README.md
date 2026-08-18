@@ -13,7 +13,7 @@ Projeto da disciplina de Microcontroladores (Engenharia de Computação — Cent
 
 Firmware que simula o controle de uma máquina de lavar roupas em um ESP32, implementando a máquina de estados completa do ciclo (enchimento → lavagem → escoamento → enxágue → escoamento → centrifugação → fim), com temporização feita inteiramente via hardware timers (sem uso de `delay()`/`millis()`).
 
-A especialização do grupo é a **eficiência energética**: o duty cycle do motor não é fixo — ele é calculado dinamicamente a partir do nível de água lido no enchimento (valor "congelado" para o resto do ciclo), estimando potência, corrente, eficiência (%) e energia total consumida (Wh) em tempo real.
+A especialização do grupo é a eficiência energética: o duty cycle do motor não é fixo — ele é calculado dinamicamente a partir do nível de água lido no enchimento (valor "congelado" para o resto do ciclo), estimando potência, corrente, eficiência (%) e energia total consumida (Wh) em tempo real.
 
 ## Funcionalidades
 
@@ -56,17 +56,6 @@ A especialização do grupo é a **eficiência energética**: o duty cycle do mo
 └── README.md
 ```
 
-## Limitações conhecidas
-
-- **Simulação, não hardware real de lavagem**: água, motor de indução e sensores de nível reais são simulados por potenciômetro, LEDs e cálculos — não há atuação física real sobre carga d'água ou tecido.
-- **PWM por software**: o duty cycle do motor é gerado via ISR de timer (não usa os periféricos LEDC nativos do ESP32 para o motor), o que é funcional mas menos preciso e mais custoso em CPU do que um PWM de hardware dedicado.
-- **Modelo de potência simplificado**: a relação `P = 500 × d²` é uma aproximação didática de carga controlada por PWM, não uma medição real de um motor físico.
-- **`esperarMS()` ainda é bloqueante**: embora substitua `delay()`, a função de espera baseada no timer de milissegundos ainda bloqueia o loop principal durante bipes do buzzer e transições de etapa — não é uma solução 100% não-bloqueante.
-- **Debounce do teclado por software**: implementado com janela fixa de 150 ms: pode gerar leituras perdidas em pressões muito rápidas.
-- **Bluetooth Serial simples**: comandos são caracteres únicos sem autenticação ou validação de protocolo; qualquer dispositivo pareado pode enviar comandos.
-- **Sem persistência de estado**: uma queda de energia durante o ciclo reinicia tudo do zero (não há uso de NVS/RTC para retomar o ciclo).
-- **Tempos de ciclo reduzidos**: as durações das etapas (10–15 s) são valores de demonstração para bancada, não tempos reais de uma lavagem doméstica.
-
 ## Conclusão
 
 O projeto cumpriu os requisitos mínimos (máquina de estados, sensoriamento, atuadores, temporização por timers e Bluetooth) e a especialização de eficiência energética proposta ao grupo. A maior dificuldade foi substituir `delay()`/`millis()` por temporização via registradores de hardware timer, o que aumentou significativamente a complexidade e o volume de código em relação a uma implementação ingênua, mas resultou em um sistema mais responsivo e adequado às boas práticas de sistemas embarcados. A integração do teclado externo via MCP23017 também exigiu abandonar o uso exclusivo de bibliotecas nativas do Arduino em favor de `LiquidCrystal_I2C.h`, para manter a estabilidade do código. No fim, o firmware roda de forma estável na bancada, exibindo em tempo real potência, eficiência e consumo energético estimado do ciclo de lavagem.
@@ -79,6 +68,6 @@ O projeto cumpriu os requisitos mínimos (máquina de estados, sensoriamento, at
 
 ## Referências
 
-- MAKIYAMA, M. *Entenda o que é PWM, para que serve, como funciona e suas aplicações*. VictorVision, 2025.
-- PEDRO. *O que é PWM (Pulse-Width Modulation)? Funcionamento e aplicações*. Clube do Maker, 2026.
-- SOUZA, F. *PWM de Arduino*. Embarcados, 2014.
+- [MAKIYAMA, M. *Entenda o que é PWM, para que serve, como funciona e suas aplicações*. VictorVision, 2025.](https://victorvision.com.br/blog/o-que-e-pwm/)
+- [PEDRO. *O que é PWM (Pulse-Width Modulation)? Funcionamento e aplicações*. Clube do Maker, 2026.](https://clubedomaker.com/o-que-e-pwm-pulse-width-modulation)
+- [SOUZA, F. *PWM de Arduino*. Embarcados, 2014.](https://embarcados.com.br/pwm-do-arduino/)
