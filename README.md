@@ -62,7 +62,7 @@ O projeto cumpriu os requisitos mínimos (máquina de estados, sensoriamento, at
 
 ## GitHub dos colaboradores:
 
-[Gabriel Ávila de Oliveira]() | 
+[Gabriel Ávila de Oliveira](https://github.com/Nagash0) | 
 [Nicholas Vincent Perin](https://github.com/NicholasPerin) | 
 [Vitor Borges Souza](https://github.com/VitorAdmita)
 
