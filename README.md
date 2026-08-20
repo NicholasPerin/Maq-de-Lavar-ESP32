@@ -68,9 +68,9 @@ O projeto cumpriu os requisitos mínimos (máquina de estados, sensoriamento, at
 
 ## Linkedin dos colaboradores:
 
-[Gabriel Ávila de Oliveira] (https://www.linkedin.com/in/gabriel-%C3%A1vila-ab0210264/) |
-[Nicholas Vincent Perin] (https://www.linkedin.com/in/nicholas-perin/) |
-[Vitor Borges Souza] (www.linkedin.com/in/vitor-borges-souza)
+[Gabriel Ávila de Oliveira](https://www.linkedin.com/in/gabriel-%C3%A1vila-ab0210264/) |
+[Nicholas Vincent Perin](https://www.linkedin.com/in/nicholas-perin/) |
+[Vitor Borges Souza](www.linkedin.com/in/vitor-borges-souza)
 
 ## Referências
 
