@@ -66,6 +66,12 @@ O projeto cumpriu os requisitos mínimos (máquina de estados, sensoriamento, at
 [Nicholas Vincent Perin](https://github.com/NicholasPerin) | 
 [Vitor Borges Souza](https://github.com/VitorAdmita)
 
+## Linkedin dos colaboradores:
+
+[Gabriel Ávila de Oliveira] (https://www.linkedin.com/in/gabriel-%C3%A1vila-ab0210264/) |
+[Nicholas Vincent Perin] (https://www.linkedin.com/in/nicholas-perin/) |
+[Vitor Borges Souza] (www.linkedin.com/in/vitor-borges-souza)
+
 ## Referências
 
 - [MAKIYAMA, M. *Entenda o que é PWM, para que serve, como funciona e suas aplicações*. VictorVision, 2025.](https://victorvision.com.br/blog/o-que-e-pwm/)
