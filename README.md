@@ -15,6 +15,8 @@ Firmware que simula o controle de uma máquina de lavar roupas em um ESP32, impl
 
 A especialização do grupo é a eficiência energética: o duty cycle do motor não é fixo — ele é calculado dinamicamente a partir do nível de água lido no enchimento (valor "congelado" para o resto do ciclo), estimando potência, corrente, eficiência (%) e energia total consumida (Wh) em tempo real.
 
+**OBS**: Necessário a instalação da biblioteca externa [`<LiquidCrystal_I2C.h>`](https://docs.arduino.cc/libraries/liquidcrystal/), e a placa `WEMOS D1 MINI ESP32`.
+
 ## Funcionalidades
 
 - **Máquina de estados** com 9 estados (`IDLE`, `ENCHIMENTO`, `LAVAGEM`, `ESCOAMENTO_1`, `ENXAGUE`, `ESCOAMENTO_2`, `CENTRIFUGACAO`, `FIM`, `ERRO`)
@@ -58,7 +60,7 @@ A especialização do grupo é a eficiência energética: o duty cycle do motor 
 
 ## Conclusão
 
-O projeto cumpriu os requisitos mínimos (máquina de estados, sensoriamento, atuadores, temporização por timers e Bluetooth) e a especialização de eficiência energética proposta ao grupo. A maior dificuldade foi substituir `delay()`/`millis()` por temporização via registradores de hardware timer, o que aumentou significativamente a complexidade e o volume de código em relação a uma implementação ingênua, mas resultou em um sistema mais responsivo e adequado às boas práticas de sistemas embarcados. A integração do teclado externo via MCP23017 também exigiu abandonar o uso exclusivo de bibliotecas nativas do Arduino em favor de `LiquidCrystal_I2C.h`, para manter a estabilidade do código. No fim, o firmware roda de forma estável na bancada, exibindo em tempo real potência, eficiência e consumo energético estimado do ciclo de lavagem.
+O projeto cumpriu os requisitos (máquina de estados, sensoriamento, atuadores, temporização por timers e Bluetooth) e a especialização de eficiência energética proposta ao grupo. A maior dificuldade foi substituir `delay()`/`millis()` por temporização via registradores de hardware timer, o que aumentou significativamente a complexidade e o volume de código em relação a uma implementação ingênua, mas resultou em um sistema mais responsivo e adequado às boas práticas de sistemas embarcados. A integração do teclado externo via MCP23017 também exigiu abandonar o uso exclusivo de bibliotecas nativas do Arduino em favor de `LiquidCrystal_I2C.h`, para manter a estabilidade do código. No fim, o firmware roda de forma estável na bancada, exibindo em tempo real potência, eficiência e consumo energético estimado do ciclo de lavagem.
 
 ## GitHub dos colaboradores:
 
