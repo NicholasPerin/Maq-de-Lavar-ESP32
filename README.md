@@ -62,6 +62,10 @@ A especialização do grupo é a eficiência energética: o duty cycle do motor 
 
 O projeto cumpriu os requisitos (máquina de estados, sensoriamento, atuadores, temporização por timers e Bluetooth) e a especialização de eficiência energética proposta ao grupo. A maior dificuldade foi substituir `delay()`/`millis()` por temporização via registradores de hardware timer, o que aumentou significativamente a complexidade e o volume de código em relação a uma implementação ingênua, mas resultou em um sistema mais responsivo e adequado às boas práticas de sistemas embarcados. A integração do teclado externo via MCP23017 também exigiu abandonar o uso exclusivo de bibliotecas nativas do Arduino em favor de `LiquidCrystal_I2C.h`, para manter a estabilidade do código. No fim, o firmware roda de forma estável na bancada, exibindo em tempo real potência, eficiência e consumo energético estimado do ciclo de lavagem.
 
+## Conclusão
+
+Link do post no LinkedIn, com o módulo funcionando: [Aqui](https://lnkd.in/p/dic9iQG2)
+
 ## GitHub dos colaboradores:
 
 [Gabriel Ávila de Oliveira](https://github.com/Nagash0) | 
