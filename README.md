@@ -1,13 +1,12 @@
 # Firmware para Máquina de Lavar Doméstica com ESP32
-### Grupo 2 — Eficiência Energética
+
+## Grupo 2 — Eficiência Energética
 
 Projeto da disciplina de Microcontroladores (Engenharia de Computação — Centro Universitário Fundação Santo André), avaliação P2 2026, baseada na Taxonomia de Bloom.
 
 **Integrantes:** Gabriel Ávila de Oliveira, Nicholas Vincent Perin, Vitor Borges Souza
 
 **Orientador:** Prof. Edson Antônio De Abreu
-
----
 
 ## Visão geral
 
@@ -51,28 +50,36 @@ A especialização do grupo é a eficiência energética: o duty cycle do motor 
 
 ## Estrutura do repositório
 
-```
-├── firmware/           # Código-fonte C++ (.ino)
-├── relatorio/           # Relatório técnico em PDF
-├── avaliacao/            # Documento de avaliação da disciplina (enunciado)
-└── README.md
+```text
+📁 Maq-de-Lavar-ESP32/
+│
+├── 📁 assets/             # Imagens adicionais
+│
+├── 📁 avaliacao/          # Documento de avaliação da disciplina
+│
+├── 📁 firmware/           # Código-fonte C++ (.ino)
+│
+├── 📁 relatorio/          # Relatório técnico em PDF
+│
+├── 📄 README.md
+└── 🔑 LICENSE
 ```
 
 ## Conclusão
 
 O projeto cumpriu os requisitos (máquina de estados, sensoriamento, atuadores, temporização por timers e Bluetooth) e a especialização de eficiência energética proposta ao grupo. A maior dificuldade foi substituir `delay()`/`millis()` por temporização via registradores de hardware timer, o que aumentou significativamente a complexidade e o volume de código em relação a uma implementação ingênua, mas resultou em um sistema mais responsivo e adequado às boas práticas de sistemas embarcados. A integração do teclado externo via MCP23017 também exigiu abandonar o uso exclusivo de bibliotecas nativas do Arduino em favor de `LiquidCrystal_I2C.h`, para manter a estabilidade do código. No fim, o firmware roda de forma estável na bancada, exibindo em tempo real potência, eficiência e consumo energético estimado do ciclo de lavagem.
 
-## Link do post no LinkedIn, com o módulo funcionando: 
+## Link do post no LinkedIn, com o módulo funcionando
 
 [Aqui](https://lnkd.in/p/dic9iQG2)
 
-## GitHub dos colaboradores:
+## GitHub dos colaboradores
 
-[Gabriel Ávila de Oliveira](https://github.com/Nagash0) | 
-[Nicholas Vincent Perin](https://github.com/NicholasPerin) | 
+[Gabriel Ávila de Oliveira](https://github.com/Nagash0) |
+[Nicholas Vincent Perin](https://github.com/NicholasPerin) |
 [Vitor Borges Souza](https://github.com/VitorAdmita)
 
-## Linkedin dos colaboradores:
+## Linkedin dos colaboradores
 
 [Gabriel Ávila de Oliveira](https://www.linkedin.com/in/gabriel-%C3%A1vila-ab0210264/) |
 [Nicholas Vincent Perin](https://www.linkedin.com/in/nicholas-perin/) |
